@@ -1,0 +1,14 @@
+scan:
+  type: connect
+  ports: "22,80,443,8080"
+  timeout: 1.5
+  rate_limit: 300
+  max_concurrent: 100
+
+discovery:
+  enabled: false
+
+output:
+  formats: ["json", "html"]
+  directory: "./reports"
+  basename: "lab_scan"

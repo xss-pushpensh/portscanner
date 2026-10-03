@@ -1,0 +1,19 @@
+scan:
+  type: connect          # connect | syn | udp
+  ports: "top-1000"
+  timeout: 2.0
+  rate_limit: 500
+  timing: normal         # paranoid | sneaky | polite | normal | aggressive | insane
+  max_concurrent: 200
+
+discovery:
+  enabled: true
+  methods: ["icmp", "tcp"]
+
+output:
+  formats: ["json", "html"]
+  directory: "./reports"
+  basename: "scan"
+
+logging:
+  level: INFO
